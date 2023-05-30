@@ -5,14 +5,14 @@
 <tr>
     <td>
         <select name="type[]" class="form-control select2 type" required>
-            <option value="">Please Select Any One</option>
+            <option value="">{{ __('lang.select_one') }}</option>
             <option value="increase">Increase</option>
             <option value="decrease">Decrease</option>
         </select>
     </td>            
     <td>
         <select name="item[]" class="form-control select2 item" required>
-            <option value="">Please Select Any One</option>
+            <option value="">{{ __('lang.select_one') }}</option>
             @foreach($products as $key => $item)
                 <option value="{{ $item->id }}" data-stock="{{ $item->stock->quantity }}">{{ $item->name }}</option>
             @endforeach
@@ -28,7 +28,7 @@
     <td></td>
     @else
     <td>
-        <button type="button" class="btn btn-danger btn-sm remove_item">Remove</button>
+        <button type="button" class="btn btn-danger btn-sm remove_item">{{ __('lang.delete') }}</button>
     </td>
     @endif
 </tr>

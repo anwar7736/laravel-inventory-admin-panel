@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $lang = request('lang');
+        session()->forget('lang');       
+        session()->put('lang', $lang);
+        app()->setLocale(session('lang'));
+    }
     /**
      * Display a listing of the resource.
      *

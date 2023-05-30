@@ -7,7 +7,16 @@ use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
-{
+{   
+    
+    public function __construct()
+    {
+        $lang = request('lang');
+        session()->forget('lang');       
+        session()->put('lang', $lang);
+        app()->setLocale(session('lang'));
+    }
+
     public function index()
     {
         return view('inventory.create');

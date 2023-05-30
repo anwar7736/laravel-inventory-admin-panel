@@ -16,6 +16,10 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $lang = request('lang');
+        app()->setLocale($lang);
+        session()->forget('lang');       
+        session()->put('lang', $lang);
     }
 
     /**
@@ -25,13 +29,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        session()->forget('lang');
-        session()->put('lang', request('lang'));
-        app()->setLocale(session('lang'));
+
         $data = [];
 
         $data['total_user'] = User::count();
         $data['total_product'] = Product::count();
+
         return view('index', compact('data'));
     }
 }

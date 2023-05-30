@@ -1,14 +1,13 @@
 @extends('layouts.master')
-@section('title', 'Dashboard')
 @section('content')
   <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Admin Dashboard</h1>
+  <h1>{{ __('lang.title') }}</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-      <li class="breadcrumb-item active">Dashboard</li>
+      <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('lang.home') }}</a></li>
+      <li class="breadcrumb-item active">{{ __('lang.title') }}</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -24,7 +23,7 @@
         <div class="col-xxl-4 col-md-4">
           <div class="card info-card sales-card">
             <div class="card-body">
-              <h5 class="card-title">Total User</span></h5>
+              <h5 class="card-title">{{ __('lang.total_user') }}</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -42,7 +41,7 @@
         <div class="col-xxl-4 col-md-4">
           <div class="card info-card sales-card">
             <div class="card-body">
-              <h5 class="card-title">Total Product</span></h5>
+              <h5 class="card-title">{{ __('lang.total_product') }}</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">

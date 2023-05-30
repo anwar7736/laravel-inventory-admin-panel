@@ -4,11 +4,11 @@
   <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Manage Stock</h1>
+  <h1>{{ __('lang.stock_manage') }}</h1>
   <nav>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-      <li class="breadcrumb-item active">Manage Stock</li>
+      <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('lang.stock_manage') }}</a></li>
+      <li class="breadcrumb-item active">{{ __('lang.stock_manage') }}</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -23,14 +23,14 @@
     <table class="table table-bordered table-striped">
   <thead class="thead-dark">
   <tr>
-      <th scope="col">Inventory Item</th>
+      <th scope="col">{{ __('lang.inventory_item') }}</th>
     </tr>    
     <tr>
-      <th scope="col">Type <span class="text-danger">*</span></th>
-      <th scope="col">Item <span class="text-danger">*</span></th>
-      <th scope="col">Input Quantity <span class="text-danger">*</span></th>
-      <th scope="col">Current Quantity</th>
-      <th scope="col">Action</th>
+      <th scope="col">{{ __('lang.type') }} <span class="text-danger">*</span></th>
+      <th scope="col">{{ __('lang.item') }} <span class="text-danger">*</span></th>
+      <th scope="col">{{ __('lang.input_qty') }} <span class="text-danger">*</span></th>
+      <th scope="col">{{ __('lang.current_qty') }}</th>
+      <th scope="col">{{ __('lang.action') }}</th>
     </tr>
   </thead>
   <tbody id="tbl_inventory">
@@ -38,12 +38,12 @@
   </tbody>    
   <tr>
         <td colspan="5" align="right">
-            <button type="button" class="btn btn-success btn-sm add_more"><i class="bi bi-plus"></i> Add Item</button>
+            <button type="button" class="btn btn-success btn-sm add_more"><i class="bi bi-plus"></i> {{ __('lang.add_more') }}</button>
         </td>
     </tr>    
     <tr>
         <td colspan="4" align="center">
-            <button type="submit" class="btn btn-primary submit">Submit</button>
+            <button type="submit" class="btn btn-primary submit">{{ __('lang.submit') }}</button>
         </td>
     </tr>
 </table>

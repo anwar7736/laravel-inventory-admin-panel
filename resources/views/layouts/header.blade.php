@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="{{ route('home') }}" class="logo d-flex align-items-center">
         <img src="{{asset('assets/img/logo.png')}}" alt="">
-        <span class="d-none d-lg-block">Manange Inventory</span>
+        <span class="d-none d-lg-block">{{ __('lang.manage_inventory') }}</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -27,8 +27,8 @@
 
         <li>
           <select id="change_lang">
-              <option value="en">Enlglish</option>
-              <option value="bn">Bangla</option>
+              <option value="en" {{ session('lang') == 'en' ? 'selected' : '' }}>Enlglish</option>
+              <option value="bn" {{ session('lang') == 'bn' ? 'selected' : '' }}>Bangla</option>
           </select>
         </li>
         <li class="nav-item dropdown">
@@ -109,7 +109,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="{{route('profile')}}">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>{{ __('lang.my_profile') }}</span>
               </a>
             </li>
             <li>
@@ -139,7 +139,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout_form').submit();">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>{{ __('lang.sign_out') }}</span>
               </a>
               <form action="{{route('logout')}}" method="POST" id="logout_form" class="d-none">
                 @csrf
