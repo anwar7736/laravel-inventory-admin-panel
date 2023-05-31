@@ -39,15 +39,16 @@ class StockController extends Controller
 
         foreach($request->item as $key => $item)
         {
+            $stock = Stock::where('product_id', $request->item[$key])->first();
             if($request->type[$key] == 'increase')
             {
-                Stock::where('product_id', $request->item[$key])->update([
-                    'quantity' => $request->current_quantity[$key] + $request->input_quantity[$key]
+                $stock->update([
+                    'quantity' => $stock->quantity + $request->input_quantity[$key]
                 ]);
             }
             else{
-                Stock::where('product_id', $request->item[$key])->update([
-                    'quantity' => $request->current_quantity[$key] - $request->input_quantity[$key]
+                $stock->update([
+                    'quantity' => $stock->quantity - $request->input_quantity[$key]
                 ]);
             }
         }
