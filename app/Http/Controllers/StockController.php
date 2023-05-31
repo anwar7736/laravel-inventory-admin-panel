@@ -47,6 +47,7 @@ class StockController extends Controller
                 ]);
             }
             else{
+                if($stock->quantity >= $request->input_quantity[$key])
                 $stock->update([
                     'quantity' => $stock->quantity - $request->input_quantity[$key]
                 ]);
